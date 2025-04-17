@@ -30,194 +30,208 @@ if (!isset($_SESSION['id_usuario'])) {
 
 <body>
 
-<div class="sidebar">
-    <div class="text-center mb-4">
-        <span class="badge badge-dark">LA CASA DE LA JUVENTUD</span>
-        <br><br>
-        <h5>Administrador</h5>
-    </div>
-    <ul class="nav flex-column">
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#galeria" role="button" aria-expanded="false" aria-controls="galeriaMenu">Galería</a>
-            <div class="collapse" id="galeria">
-                <ul class="nav flex-column ml-3">
-                    <li class="nav-item"><a class="nav-link" href="#crearimagen">Crear Imagen</a></li>
-                    <li class="nav-item"><a class="nav-link" href="tablaGaleria.php">Ver Imagen</a></li>
-                </ul>
-            </div>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#curso" role="button" aria-expanded="false" aria-controls="ordersMenu">Cursos</a>
-            <div class="collapse" id="curso">
-                <ul class="nav flex-column ml-3">
-                    <li class="nav-item"><a class="nav-link" href="#crearcurso">Crear Cursos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="tablaCursos.php">Ver Cursos</a></li>
-                </ul>
-            </div>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#evento" role="button" aria-expanded="false" aria-controls="dashboardMenu">Eventos</a>
-            <div class="collapse" id="evento">
-                <ul class="nav flex-column ml-3">
-                    <li class="nav-item"><a class="nav-link" href="#crearevento">Crear Evento</a></li>
-                    <li class="nav-item"><a class="nav-link" href="tablaEvento.php">Ver Eventos</a></li>
-                </ul>
-            </div>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#voluntariado" role="button" aria-expanded="false" aria-controls="voluntariadoMenu">Voluntariado</a>
-            <div class="collapse" id="voluntariado">
-                <ul class="nav flex-column ml-3">
-                    <li class="nav-item"><a class="nav-link" href="tablaVoluntariado.php">Ver Voluntariados</a></li>
-                </ul>
-            </div>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link salir" data-toggle="collapse" href="#masMenu" role="button" aria-expanded="false" aria-controls="masMenu">Salir</a>
-            <div class="collapse" id="masMenu">
-                <ul class="nav flex-column ml-3">
-                    <li class="nav-item"><a class="nav-link" href="../controller/logout.php">Cerrar Sesión</a></li>
-                </ul>
-            </div>
-        </li>
-    </ul>
-</div>
+<!-- Add Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<!-- <div class="toggle-btn">
-    <span class="open">&#9776;</span>
-    <span class="close">&times;</span>
-</div> -->
+<div class="sidebar">
+    <div class="sidebar-header">
+        <img src="../assets/img/logocasa.png" alt="Casa de la Juventud">
+
+    </div>
+    
+    <div class="sidebar-nav">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#galeria" role="button" aria-expanded="false" aria-controls="galeriaMenu">
+                    <i class="fas fa-images me-2"></i> Galería
+                </a>
+                <div class="collapse" id="galeria">
+                    <ul class="nav flex-column ml-3">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#form-gallery" onclick="scrollToForm('form-gallery')">
+                                <i class="fas fa-plus-circle me-2"></i> Crear Imagen
+                            </a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="tablaGaleria.php"><i class="fas fa-eye me-2"></i> Ver Imagen</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#curso" role="button" aria-expanded="false" aria-controls="ordersMenu">
+                    <i class="fas fa-book me-2"></i> Cursos
+                </a>
+                <div class="collapse" id="curso">
+                    <ul class="nav flex-column ml-3">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#form-course" onclick="scrollToForm('form-course')">
+                                <i class="fas fa-plus-circle me-2"></i> Crear Cursos
+                            </a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="tablaCursos.php"><i class="fas fa-eye me-2"></i> Ver Cursos</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#evento" role="button" aria-expanded="false" aria-controls="dashboardMenu">
+                    <i class="fas fa-calendar-alt me-2"></i> Eventos
+                </a>
+                <div class="collapse" id="evento">
+                    <ul class="nav flex-column ml-3">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#form-event" onclick="scrollToForm('form-event')">
+                                <i class="fas fa-plus-circle me-2"></i> Crear Evento
+                            </a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="tablaEvento.php"><i class="fas fa-eye me-2"></i> Ver Eventos</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#voluntariado" role="button" aria-expanded="false" aria-controls="voluntariadoMenu">
+                    <i class="fas fa-hands-helping me-2"></i> Voluntariado
+                </a>
+                <div class="collapse" id="voluntariado">
+                    <ul class="nav flex-column ml-3">
+                        <li class="nav-item"><a class="nav-link" href="tablaVoluntariado.php"><i class="fas fa-eye me-2"></i> Ver Voluntariados</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+     </div>
+ <div class="sidebar-footer">
+  <a href="../controller/logout.php" class="nav-link logout">
+    <i class="fas fa-sign-out-alt"></i> Salir
+</a>
+ </div>
+</div> 
+</div>
+</div>
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- <script>
-        $(document).ready(function() {
-            $('.toggle-btn').click(function() {
-                $('.sidebar').toggleClass('active');
-                $('.toggle-btn').toggleClass('active');
-            });
-        });
-    </script> -->
-
-    <!-- BIENVENIDA -->
 
     <div class="container">
         <div class="grid-container">
             <div class="item1">
                 <div class="centrar">
-                    <h1>Hola Administrador</h1>
-                    <p>Bienvenido, ¿Qué quieres crear el día de hoy?</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- CREAR GALERIA -->
-    <div class="container">
-        <div class="grid-container">
-            <div class="curso" id="crearimagen">
-                <div class="centrar">
-                    <div class="form-container">
-                        <h3>Crear Galeria</h3>
-                        <form action="../controller/CrudGaleria/agregarImagen.php" method="POST" enctype="multipart/form-data" onsubmit="return showSuccessAlert();">
-                         <label for="imagen">Selecciona una imagen</label>
-                        <input type="file" name="imagen" id="imagen" required><br>
-
-                         <label for="nombre">Nombre</label>
-                         <input type="text" name="nombre" id="nombre" placeholder="Ingresa el nombre" required><br>
-                         
-                         <label for="descripcion">Descripción</label>
-                         <input type="text" name="descripcion" id="descripcion" placeholder="Ingresa la descripción" required><br>
-                                                  <input type="submit" name="enviar" value="Enviar">
-</form>
-
-                        </form>
+                    <!-- Main Content Container -->
+                    <div class="main-content-container">
+                        <!-- Welcome Section -->
+                        <div class="welcome-section">
+                            <h1>Hola Administrador</h1>
+                            <p>Bienvenido, ¿Qué quieres crear el día de hoy?</p>
+                        </div>
+                    
+                        <!-- Forms Container -->
+                        <!-- Gallery Form -->
+                        <div class="form-card gallery" id="form-gallery">
+                            <h3><i class="fas fa-images"></i> Crear Galería</h3>
+                            <form action="../controller/CrudGaleria/agregarImagen.php" method="POST" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label for="imagen"><i class="fas fa-file-image"></i> Imagen</label>
+                                    <input type="file" name="imagen" id="imagen" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nombre"><i class="fas fa-font"></i> Nombre</label>
+                                    <input type="text" name="nombre" id="nombre" placeholder="Ingresa el nombre" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="descripcion"><i class="fas fa-align-left"></i> Descripción</label>
+                                    <input type="text" name="descripcion" id="descripcion" placeholder="Ingresa la descripción" required>
+                                </div>
+                                <div class="submit-container">
+                                    <button type="submit" class="submit-btn">
+                                        <i class="fas fa-paper-plane"></i> Enviar
+                                    </button>
+                                </div>
+                            </form>
+                            <div class="action-buttons gallery">
+                                <a href="tablaGaleria.php" class="action-btn">
+                                    <i class="fas fa-images"></i> Ver Galería
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <!-- Course Form -->
+                        <div class="form-card course" id="form-course">
+                            <h3><i class="fas fa-book"></i> Crear Curso</h3>
+                            <form action="../controller/CrudCurso/crearcurso.php" method="POST" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label for="imagen"><i class="fas fa-file-image"></i> Imagen</label>
+                                    <input type="file" id="imagen" name="imagen" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="titulo"><i class="fas fa-heading"></i> Título</label>
+                                    <input type="text" id="titulo" name="titulo" placeholder="Ingresa el título" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="descripcion"><i class="fas fa-align-left"></i> Descripción</label>
+                                    <input type="text" id="descripcion" name="descripcion" placeholder="Ingresa la descripción" required>
+                                </div>
+                                <div class="submit-container">
+                                    <button type="submit" class="submit-btn">
+                                        <i class="fas fa-paper-plane"></i> Enviar
+                                    </button>
+                                </div>
+                            </form>
+                            <div class="action-buttons course">
+                                <a href="tablaCursos.php" class="action-btn">
+                                    <i class="fas fa-book"></i> Ver Cursos
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <!-- Event Form -->
+                        <div class="form-card event" id="form-event">
+                            <h3><i class="fas fa-calendar-alt"></i> Crear Evento</h3>
+                            <form action="../controller/CrudEventos/crearevento.php" method="POST">
+                                <div class="form-group">
+                                    <label for="titulo"><i class="fas fa-heading"></i> Título</label>
+                                    <input type="text" id="titulo" name="titulo" placeholder="Ingresa el título" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="descripcion"><i class="fas fa-align-left"></i> Descripción</label>
+                                    <input type="text" id="descripcion" name="descripcion" placeholder="Ingresa la descripción" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="fecha"><i class="fas fa-calendar-day"></i> Fecha</label>
+                                    <input type="date" id="fecha" name="fecha" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="hora"><i class="fas fa-clock"></i> Hora</label>
+                                    <input type="time" id="hora" name="hora" required>
+                                </div>
+                                <div class="submit-container">
+                                    <button type="submit" class="submit-btn">
+                                        <i class="fas fa-paper-plane"></i> Enviar
+                                    </button>
+                                </div>
+                            </form>
+                            <div class="action-buttons event">
+                                <a href="tablaEvento.php" class="action-btn">
+                                    <i class="fas fa-calendar-alt"></i> Ver Eventos
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
             <script>
-   
-</script>
+            function scrollToForm(formId) {
+                event.preventDefault();
+                const formElement = document.getElementById(formId);
+                if (formElement) {
+                    formElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+            </script>
 
-
-            <div class="resultadoc">
-                <div class="left">
-                    <a class="button_slide slide_left" href="tablaGaleria.php">Galería de imágenes</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--  CREAR CURSO -->
-    <div class="container">
-        <div class="grid-container">
-            <div class="curso" id="crearcurso">
-                <div class="centrar">
-                    <div class="form-container">
-                        <h3>Crear Curso</h3>
-                        <form action="../controller/CrudCurso/crearcurso.php" method="POST" enctype="multipart/form-data">
-                            <label for="imagen">Imagen</label>
-                            <input type="file" id="imagen" name="imagen" required>
-
-                            <label for="titulo">Titulo</label>
-                            <input type="text" id="titulo" name="titulo" placeholder="Ingresa el Titulo" required>
-
-                            <label for="descripcion">Descripcion</label>
-                            <input type="text" id="descripcion" name="descripcion" placeholder="Ingresa la Descripcion" required>
-
-
-                            <input type="submit" name="crearcurso" value="Enviar">
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <div class="resultadoc">
-                <div class="left">
-                    <a class="button_slide slide_left" href="tablaCursos.php">Cursos Disponibles</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-    <!--  CREAR EVENTOS-->
-    <div class="container">
-        <div class="grid-container">
-            <div class="curso" id="crearevento">
-                <div class="centrar">
-                    <div class="form-container">
-                        <h3>Crear Eventos</h3>
-                        <form action="../controller/CrudEventos/crearevento.php" method="POST" >
-
-                            <label for="titulo">Titulo</label>
-                            <input type="text" id="titulo" name="titulo" placeholder="Ingresa el Titulo" required>
-
-                            <label for="descripcion">Descripcion</label>
-                            <input type="text" id="descripcion" name="descripcion" placeholder="Ingresa la Descripcion" required>
-
-                            <label for="enlace">Fecha</label>
-                            <input type="date" id="fecha" name="fecha" placeholder="Ingresa la fecha" required>
-
-                            <label for="enlace">Hora</label>
-                            <input type="time" id="hora" name="hora" placeholder="Ingresa la hora" required>
-
-                            <input type="submit" name="enviar" value="Enviar">
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <div class="resultadoc">
-                <div class="left">
-                    <a class="button_slide slide_left" href="tablaEvento.php">Eventos Disponibles</a>
-                </div>
-            </div>
-        </div>
-    </div>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="../js/alert.js"></script>
