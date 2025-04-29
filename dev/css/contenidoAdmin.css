@@ -1,0 +1,245 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;700&display=swap');
+
+/* Base Styles */
+body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Grid layout */
+.grid-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+/* Admin welcome section */
+.item1 {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Forms container */
+.main-content {
+    margin-left: 250px; /* Same as sidebar width */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.forms-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Forms Container */
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    width: calc(100% - 250px);
+}
+
+.forms-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Form Cards */
+.form-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 10%;
+    width: 100%;
+    margin-left: 15%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .forms-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Color Themes */
+.form-card.gallery {
+    border-left: 5px solid #FF9FF3; /* Pink */
+}
+
+.form-card.course {
+    border-left: 5px solid #FECA57; /* Yellow */
+}
+
+.form-card.event {
+    border-left: 5px solid #54A0FF; /* Blue */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+.form-card h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-card h3 i {
+    font-size: 1.2em;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+    color: #555;
+    font-size: 0.9em;
+}
+
+.form-group input {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+/* Submit Button */
+.submit-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.submit-btn {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.gallery .submit-btn {
+    background-color: #FF9FF3; /* Pink */
+    color: white;
+}
+
+.course .submit-btn {
+    background-color: #FECA57; /* Yellow */
+    color: #333;
+}
+
+.event .submit-btn {
+    background-color: #54A0FF; /* Blue */
+    color: white;
+}
+
+/* Action Buttons inside cards */
+.form-card .action-buttons {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.gallery .action-btn {
+    background-color: #FF9FF3; /* Pink */
+    color: white;
+}
+
+.course .action-btn {
+    background-color: #FECA57; /* Yellow */
+    color: #333;
+}
+
+.event .action-btn {
+    background-color: #54A0FF; /* Blue */
+    color: white;
+}
+
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.action-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* Remove the old action buttons section */
+.main-content-container > .action-buttons {
+    display: none;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background-color: #2ecc71;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.welcome-section h1 {
+    color: #2c3e50;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    margin-left: 25%;
+}
+
+.welcome-section p {
+    color: #555;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+    margin-left: 25%;
+}

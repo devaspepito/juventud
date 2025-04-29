@@ -1,0 +1,156 @@
+
+.sidebar {
+    height: 100vh;
+    width: 300px; /* Increased from 250px */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #c5e5fa; /* Light blue color */
+    transition: left 0.3s ease;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.sidebar-header img {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.sidebar-nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20px; /* Add padding for better spacing */
+}
+
+.sidebar .nav-link {
+    color: #2c3e50;
+    padding: 14px 25px; /* Increased padding */
+    font-size: 1rem; /* Larger font size */
+    margin: 4px 0; /* Increased margin */
+    text-align: left;
+    font-size: 0.95rem; /* Smaller font size */
+    font-weight: 500;
+    border-radius: 4px;
+    margin: 2px 0; /* Reduced margin */
+    transition: all 0.2s ease;
+    position: relative; /* For icon positioning */
+}
+
+/* Add icons for expandable items */
+.sidebar .nav-link[data-toggle="collapse"]::after {
+    content: '\f078'; /* FontAwesome chevron-down */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 15px;
+    transition: transform 0.2s ease;
+}
+
+.sidebar .nav-link[data-toggle="collapse"].collapsed::after {
+    content: '\f054'; /* FontAwesome chevron-right */
+}
+
+/* Style for nested menu items */
+.sidebar .nav-link + .collapse .nav-link {
+    padding-left: 35px; /* Increased nested item padding */
+    font-size: 0.9rem; /* Slightly larger nested font */
+}
+
+.sidebar-header img {
+    max-width: 70%; /* Slightly larger logo */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.sidebar-nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20px; /* Add padding for better spacing */
+}
+
+.sidebar .nav-link {
+    color: #2c3e50;
+    padding: 12px 20px; /* Reduced padding */
+    text-align: left;
+    font-size: 0.95rem; /* Smaller font size */
+    font-weight: 500;
+    border-radius: 4px;
+    margin: 2px 0; /* Reduced margin */
+    transition: all 0.2s ease;
+    position: relative; /* For icon positioning */
+}
+
+/* Add icons for expandable items */
+.sidebar .nav-link[data-toggle="collapse"]::after {
+    content: '\f078'; /* FontAwesome chevron-down */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 15px;
+    transition: transform 0.2s ease;
+}
+
+.sidebar .nav-link[data-toggle="collapse"].collapsed::after {
+    content: '\f054'; /* FontAwesome chevron-right */
+}
+
+/* Style for nested menu items */
+.sidebar .nav-link + .collapse .nav-link {
+    padding-left: 30px;
+    font-size: 0.85rem;
+}
+
+.sidebar .nav-link:hover {
+    background-color: rgba(255,255,255,0.5); /* Lighter hover effect */
+    color: #1a5276; /* Darker blue on hover */
+    transform: translateX(5px); /* Slight movement on hover */
+}
+
+.sidebar .nav-link.logout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.toggle-btn {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.toggle-btn .open { display: inline; }
+.toggle-btn .close { display: none; }
+
+.sidebar.active { left: 0; }
+.sidebar.active + .toggle-btn .open { display: none; }
+.sidebar.active + .toggle-btn .close { display: inline; }
+
+
+.toggle-btn {
+    position: fixed; /* Fija la posición del botón */
+    top: 15px;      /* Posición desde la parte superior */
+    left: 15px;     /* Posición desde la parte izquierda */
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.toggle-btn .open { display: inline; }
+.toggle-btn .close { display: none; }
+
+.sidebar.active + .toggle-btn .open { display: none; }
+.sidebar.active + .toggle-btn .close { display: inline; }

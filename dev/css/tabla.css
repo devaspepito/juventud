@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;700&display=swap');
+
+/* Table Styles */
+.table-container {
+    width: 95%;
+    margin: 30px auto;
+    overflow-x: auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    background: white;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'DM Sans', sans-serif;
+}
+
+thead {
+    background: #4b6cb7; /* Blue gradient */
+    color: white;
+    font-size: 0.95em;
+}
+
+/* Remove the hover effect from table rows that was affecting thead */
+tr:not(:last-child) {
+    border-bottom: 1px solid #f1f1f1;
+}
+
+/* Keep hover effect only for tbody rows */
+tbody tr:hover {
+    background-color: #f8faff;
+}
+
+th {
+    padding: 15px 20px;
+    text-align: left;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+td {
+    padding: 14px 20px;
+    border-bottom: 1px solid #f1f1f1;
+    color: #555;
+    font-size: 0.95em;
+}
+
+tr:not(:last-child) {
+    border-bottom: 1px solid #f1f1f1;
+}
+
+tr:hover {
+    background-color: #f8faff;
+}
+
+/* Button Styles */
+.btn {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin: 0 4px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.btn img {
+    width: 16px;
+    height: 16px;
+    filter: brightness(0) invert(1);
+}
+
+/* Title Styles */
+.titulo {
+    text-align: center;
+    color: #2c3e50;
+    margin: 25px 0 30px;
+    font-weight: 700;
+    font-size: 2.2em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.titulo::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    border-radius: 2px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .table-container {
+        width: 98%;
+        margin: 20px auto;
+    }
+    
+    th, td {
+        padding: 12px 15px;
+        font-size: 0.85em;
+    }
+    
+    .btn {
+        padding: 6px 10px;
+        margin: 0 2px;
+    }
+}
+
+/* Image Styles in Tables */
+td img {
+    max-width: 60px;
+    max-height: 60px;
+    border-radius: 4px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+.back-container {
+    text-align: right;
+    margin: 20px;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 20px;
+}
+
+.titulo {
+    margin: 0;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #f1f1f1;
+}
+
+.back-btn svg {
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+}
